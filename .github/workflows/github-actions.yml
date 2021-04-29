@@ -16,5 +16,6 @@ jobs:
           ls ${{ github.workspace }}
       - name: run make lint
         run: |
+          cd ${{ github.workspace }}
           make lint
       - run: echo "🍏 This job's status is ${{ job.status }}."
