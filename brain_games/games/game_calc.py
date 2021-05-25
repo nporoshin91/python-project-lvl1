@@ -17,9 +17,9 @@ def game():
         number1 = randint(1, 100)
         number2 = randint(1, 100)
         operator = choice('+-*')
-        res = str(calculate_result(number1, number2, choice))
         print('Question: {0} {1} {2}'.format(number1, operator, number2))
         answer = prompt.string('Your answer: ')
+        res = str(calculate_result(number1, number2, operator))
         if is_correct_answer(res, answer):
             correct_answers_count += 1
         else:
