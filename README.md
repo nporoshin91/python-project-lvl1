@@ -8,3 +8,5 @@
 <a href="https://asciinema.org/a/411468" target="_blank"><img src="https://asciinema.org/a/411468.svg" /></a>
 ### hexlet brain-calc
 <a href="https://asciinema.org/a/416182" target="_blank"><img src="https://asciinema.org/a/416182.svg" /></a>
+### hexlet brain-gcd
+<a href="https://asciinema.org/a/416919" target="_blank"><img src="https://asciinema.org/a/416919.svg" /></a>
