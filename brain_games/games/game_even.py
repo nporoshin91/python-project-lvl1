@@ -1,13 +1,17 @@
 """Even/Odd game."""
+
 from random import randint
 
 import prompt
-
 from brain_games.scripts.brain_games import max_game_runs
 
 
 def game(name):
-    """Play the game with the user."""
+    """Play the game with the user.
+
+    Args:
+        name: username
+    """
     print('Answer "yes" if the number is even, otherwise answer "no".')
     try_again = "Let's try again, {0}!".format(name)
     correct_answers_count = 0
@@ -24,8 +28,7 @@ def game(name):
 
 
 def is_correct_answer(question, answer):
-    """Return True if user's answer is correct and return False if user's answer
-     is incorrect.
+    """Return True if user's answer is correct and return False if not.
 
     Args:
         question: int that is displayed to the user.
@@ -39,14 +42,20 @@ def is_correct_answer(question, answer):
             print('Correct!')
             return True
         print(
-            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer,
-                                                                         'yes'))
+            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
+                answer,
+                'yes',
+            ),
+        )
         return False
     elif question % 2 != 0:
         if answer == 'no':
             print('Correct!')
             return True
         print(
-            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer,
-                                                                         'no'))
+            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
+                answer,
+                'no',
+            ),
+        )
         return False

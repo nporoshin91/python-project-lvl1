@@ -1,13 +1,17 @@
 """Module with "Prime" game."""
+
 from random import randint
 
 import prompt
-
 from brain_games.scripts.brain_games import max_game_runs
 
 
 def game(name):
-    """Play the game with the user."""
+    """Play the game with the user.
+
+    Args:
+        name: username
+    """
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     try_again = "Let's try again, {0}!".format(name)
     correct_answers_count = 0
@@ -43,8 +47,7 @@ def calculate_result(question):
 
 
 def is_correct_answer(res, answer):
-    """Return True if user's answer is correct and return False if user's answer
-     is incorrect.
+    """Return True if user's answer is correct and return False if not.
 
     Args:
         res: calculated result of the question, str
@@ -56,6 +59,10 @@ def is_correct_answer(res, answer):
     if res == answer:
         print('Correct!')
         return True
-    print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer,
-                                                                       res))
+    print(
+        "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
+            answer,
+            res,
+        ),
+    )
     return False
