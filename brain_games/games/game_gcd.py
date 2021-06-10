@@ -44,7 +44,8 @@ def calculate_result(num1, num2):
 
 
 def is_correct_answer(res, answer):
-    """Return True if user's answer is correct and return False if user's answer is incorrect.
+    """Return True if user's answer is correct and return False if user's answer
+     is incorrect.
 
     Args:
         res: calculated result of the question, str
@@ -56,5 +57,6 @@ def is_correct_answer(res, answer):
     if res == answer:
         print('Correct!')
         return True
-    print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer, res))
+    print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer,
+                                                                       res))
     return False

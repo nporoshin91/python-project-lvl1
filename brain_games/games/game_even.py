@@ -24,7 +24,8 @@ def game(name):
 
 
 def is_correct_answer(question, answer):
-    """Return True if user's answer is correct and return False if user's answer is incorrect.
+    """Return True if user's answer is correct and return False if user's answer
+     is incorrect.
 
     Args:
         question: int that is displayed to the user.
@@ -37,11 +38,15 @@ def is_correct_answer(question, answer):
         if answer == 'yes':
             print('Correct!')
             return True
-        print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer, 'yes'))
+        print(
+            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer,
+                                                                         'yes'))
         return False
     elif question % 2 != 0:
         if answer == 'no':
             print('Correct!')
             return True
-        print("'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer, 'no'))
+        print(
+            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(answer,
+                                                                         'no'))
         return False
