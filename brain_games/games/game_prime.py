@@ -20,7 +20,7 @@ def game(name):
             correct_answers_count += 1
         else:
             print(try_again)
-            exit(1)
+            exit(0)
     print('Congratulations, {0}!'.format(name))
 
 
