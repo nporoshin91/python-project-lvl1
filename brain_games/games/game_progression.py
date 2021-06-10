@@ -16,7 +16,7 @@ def game(name):
         progression_start = randint(1, 100)
         progression_step = randint(1, 5)
         progression_end = progression_start + progression_step * (
-                    progression_length - 1)
+                progression_length - 1)
         progression_end += 1
         progression = [p for p in range(progression_start, progression_end,
                                         progression_step)]
