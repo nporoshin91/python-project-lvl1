@@ -18,8 +18,8 @@ def game(name):
         progression_end = progression_start + progression_step * (
                 progression_length - 1)
         progression_end += 1
-        progression = [p for p in range(progression_start, progression_end,
-                                        progression_step)]
+        progression = [p for p in range(
+            progression_start, progression_end, progression_step)]
         missing_number_position = randint(0, progression_length - 1)
         res = progression.pop(missing_number_position)
         progression.insert(missing_number_position, '..')
