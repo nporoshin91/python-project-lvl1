@@ -6,8 +6,8 @@ from brain_games.scripts.brain_games import main as greet
 
 def main():
     """Greet the user and launch the game."""
-    greet()
-    start_game()
+    name = greet()
+    start_game(name)
 
 
 if __name__ == '__main__':

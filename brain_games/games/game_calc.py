@@ -3,13 +3,11 @@ from random import randint, choice
 
 import prompt
 
-from brain_games.games.game_main import ask_for_name
-from brain_games.games.game_main import max_game_runs
+from brain_games.scripts.brain_games import max_game_runs
 
 
-def game():
+def game(name):
     """Play the game with the user."""
-    name = ask_for_name()
     print('What is the result of the expression?')
     try_again = "Let's try again, {0}!".format(name)
     correct_answers_count = 0
