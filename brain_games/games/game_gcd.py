@@ -42,8 +42,7 @@ def calculate_result(num1, num2):
         return calculate_result(num1, num2)
     elif num2 > num1:
         return calculate_result(num2, num1)
-    else:
-        return num2
+    return num2
 
 
 def is_correct_answer(res, answer):

@@ -3,7 +3,11 @@ from brain_games.cli import welcome_user
 
 
 def ask_for_name():
-    """Call CLI to get user's name."""
+    """Call CLI to get user's name.
+
+    Returns:
+        username
+    """
     name = welcome_user()
     return name
 

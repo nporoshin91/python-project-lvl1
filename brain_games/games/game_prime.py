@@ -1,4 +1,4 @@
-"""Module with "Progression game."""
+"""Module with "Prime" game."""
 from random import randint
 
 import prompt
@@ -10,23 +10,14 @@ from brain_games.games.game_main import max_game_runs
 def game():
     """Play the game with the user."""
     name = ask_for_name()
-    print('What number is missing in the progression?')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     try_again = "Let's try again, {0}!".format(name)
     correct_answers_count = 0
-    progression_length = 10
     while correct_answers_count < max_game_runs:
-        progression_start = randint(1, 100)
-        progression_step = randint(1, 5)
-        progression_end = progression_start + progression_step * (progression_length - 1)
-        progression_end += 1
-        progression = [p for p in range(progression_start, progression_end, progression_step)]
-        missing_number_position = randint(0, progression_length)
-        res = progression.pop(missing_number_position)
-        progression.insert(missing_number_position, '..')
-        print('Question: ', end='')
-        for p in progression:
-            print(p, end=' ')
-        answer = int(prompt.string('\nYour answer: '))
+        question = randint(2, 100)
+        print('Question: {0}'.format(question))
+        answer = prompt.string('Your answer: ')
+        res = str(calculate_result(question))
         if is_correct_answer(res, answer):
             correct_answers_count += 1
         else:
@@ -35,12 +26,30 @@ def game():
     print('Congratulations, {0}!'.format(name))
 
 
+def calculate_result(question):
+    """Return value calculated based on the arguments.
+
+    Args:
+        question: the first int argument.
+
+    Returns:
+        int
+    """
+    divisor = 2
+    while divisor < question:
+        if question % divisor == 0 and divisor < question:
+            return 'no'
+        else:
+            divisor += 1
+    return 'yes'
+
+
 def is_correct_answer(res, answer):
     """Return True if user's answer is correct and return False if user's answer is incorrect.
 
     Args:
-        res: calculated result of the question, int
-        answer: user's answer, int
+        res: calculated result of the question, str
+        answer: user's answer, str
 
     Returns:
         True or False

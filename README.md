@@ -12,3 +12,5 @@
 <a href="https://asciinema.org/a/416919" target="_blank"><img src="https://asciinema.org/a/416919.svg" /></a>
 ### hexlet brain-progression
 <a href="https://asciinema.org/a/419059" target="_blank"><img src="https://asciinema.org/a/419059.svg" /></a>
+### hexlet brain-prime
+<a href="https://asciinema.org/a/419489" target="_blank"><img src="https://asciinema.org/a/419489.svg" /></a>
