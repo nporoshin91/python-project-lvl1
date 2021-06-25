@@ -3,6 +3,8 @@
 from random import randint
 
 import prompt
+
+from brain_games.is_correct_answer import is_correct_answer
 from brain_games.scripts.brain_games import max_game_runs
 
 
@@ -44,25 +46,3 @@ def calculate_result(question):
         else:
             divisor += 1
     return 'yes'
-
-
-def is_correct_answer(res, answer):
-    """Return True if user's answer is correct and return False if not.
-
-    Args:
-        res: calculated result of the question, str
-        answer: user's answer, str
-
-    Returns:
-        True or False
-    """
-    if res == answer:
-        print('Correct!')
-        return True
-    print(
-        "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
-            answer,
-            res,
-        ),
-    )
-    return False

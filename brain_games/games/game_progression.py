@@ -3,6 +3,8 @@
 from random import randint
 
 import prompt
+
+from brain_games.is_correct_answer import is_correct_answer
 from brain_games.scripts.brain_games import max_game_runs
 
 
@@ -30,8 +32,7 @@ def game(name):
         res = progression.pop(missing_number_position)
         progression.insert(missing_number_position, '..')
         print('Question: ', end='')
-        for p in progression:
-            print(p, end=' ')
+        print(" ".join([str(p) for p in progression]))
         answer = int(prompt.string('\nYour answer: '))
         if is_correct_answer(res, answer):
             correct_answers_count += 1
@@ -39,25 +40,3 @@ def game(name):
             print(try_again)
             exit(0)
     print('Congratulations, {0}!'.format(name))
-
-
-def is_correct_answer(res, answer):
-    """Return True if user's answer is correct and return False if not.
-
-    Args:
-        res: calculated result of the question, int
-        answer: user's answer, int
-
-    Returns:
-        True or False
-    """
-    if res == answer:
-        print('Correct!')
-        return True
-    print(
-        "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
-            answer,
-            res,
-        ),
-    )
-    return False

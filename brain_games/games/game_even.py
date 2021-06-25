@@ -3,6 +3,8 @@
 from random import randint
 
 import prompt
+
+from brain_games.is_correct_answer import is_correct_answer
 from brain_games.scripts.brain_games import max_game_runs
 
 
@@ -19,6 +21,7 @@ def game(name):
         question = randint(1, 100)
         print('Question: {0}'.format(question))
         answer = prompt.string('Your answer: ')
+        res = calculate_result
         if is_correct_answer(question, answer):
             correct_answers_count += 1
         else:
@@ -27,16 +30,7 @@ def game(name):
     print('Congratulations, {0}!'.format(name))
 
 
-def is_correct_answer(question, answer):
-    """Return True if user's answer is correct and return False if not.
-
-    Args:
-        question: int that is displayed to the user.
-        answer: str that user enters.
-
-    Returns:
-        True or False
-    """
+def calculate_result(question, answer):
     if question % 2 == 0:
         if answer == 'yes':
             print('Correct!')
