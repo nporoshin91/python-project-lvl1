@@ -21,8 +21,8 @@ def game(name):
         question = randint(1, 100)
         print('Question: {0}'.format(question))
         answer = prompt.string('Your answer: ')
-        res = calculate_result
-        if is_correct_answer(question, answer):
+        res = calculate_result(question)
+        if is_correct_answer(res, answer):
             correct_answers_count += 1
         else:
             print(try_again)
@@ -30,26 +30,7 @@ def game(name):
     print('Congratulations, {0}!'.format(name))
 
 
-def calculate_result(question, answer):
+def calculate_result(question):
     if question % 2 == 0:
-        if answer == 'yes':
-            print('Correct!')
-            return True
-        print(
-            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
-                answer,
-                'yes',
-            ),
-        )
-        return False
-    elif question % 2 != 0:
-        if answer == 'no':
-            print('Correct!')
-            return True
-        print(
-            "'{0}' is wrong answer ;(. Correct answer was '{1}'.".format(
-                answer,
-                'no',
-            ),
-        )
-        return False
+        return 'yes'
+    return 'no'
