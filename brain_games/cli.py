@@ -1,4 +1,5 @@
 """CLI to get user's name."""
+
 import prompt
 
 

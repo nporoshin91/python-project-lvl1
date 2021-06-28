@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Print welcome message."""
+
 from brain_games.cli import welcome_user
 
 
